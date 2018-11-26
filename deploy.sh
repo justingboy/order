@@ -37,6 +37,10 @@ cp $PROJ_PATH/order/target/order.war $TOMCAT_APP_PATH/webapps/
 cd $TOMCAT_APP_PATH/webapps/
 mv order.war ROOT.war
 
+# 重新启动 MySql 服务
+service mysqld stop
+service mysqld start
+
 # 启动Tomcat
 cd $TOMCAT_APP_PATH/
 sh bin/startup.sh
